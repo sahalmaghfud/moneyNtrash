@@ -28,7 +28,16 @@ namespace moneyNtrash.GUI
 
         private void button1_Click(object sender, EventArgs e)
         {            
-            Sampah.updateSampah(this.idSampah,(double)harga.Value,(double)stok.Value);
+           if( Sampah.updateSampah(this.idSampah,(double)harga.Value,(double)stok.Value) == 1)
+            {
+                MessageBox.Show("berhasil");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("ada yang salah nich?");
+            }
+
         }
     }
 }

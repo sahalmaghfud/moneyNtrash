@@ -28,6 +28,7 @@ namespace moneyNtrash.GUI
                 if (transaksi.createTransaksi() == 1)
                 {
                     MessageBox.Show("behasil");
+                    this.Close();
                 }
                 else
                 {

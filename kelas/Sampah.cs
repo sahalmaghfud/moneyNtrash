@@ -91,8 +91,9 @@ namespace moneyNtrash.kelas
 
         }
 
-        public static void updateSampah(int idSampah, double harga, double stok)
+        public static int updateSampah(int idSampah, double harga, double stok)
         {
+            int rst = 0;
            
             MySqlConnection connect = new MySqlConnection(conString);//membuat objek untuk koneksi ke mysql
             MySqlCommand cmd = new MySqlCommand("UPDATE datasampah SET harga = @harga , jumlahTersimpan=@stok WHERE id = @idSampah");
@@ -118,6 +119,7 @@ namespace moneyNtrash.kelas
                     connect.Close();
                 }
             }
+            return rst;
         }
 
 
