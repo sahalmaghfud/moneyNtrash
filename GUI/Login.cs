@@ -31,6 +31,10 @@ namespace moneyNtrash.GUI
                 MessageBox.Show("berhasil");
                 this.Close();
             }
+            else
+            {
+                MessageBox.Show("Kata Sandi / Usernamenya Salah Syang");
+            }
 
         }
     }
