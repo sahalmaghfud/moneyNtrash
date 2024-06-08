@@ -17,6 +17,13 @@ namespace moneyNtrash.GUI
             InitializeComponent();
             monthSelector.Format = DateTimePickerFormat.Custom;
             monthSelector.CustomFormat = "MM/yyyy";
+            monthSelector.ShowUpDown = true;
+        }
+
+        private void pilihButton_Click(object sender, EventArgs e)
+        {
+            LaporanBulanan formLaporan = new LaporanBulanan(monthSelector.Text);
+            formLaporan.Show();
         }
     }
 }

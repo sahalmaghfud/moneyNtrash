@@ -122,6 +122,39 @@ namespace moneyNtrash.kelas
             return rst;
         }
 
+        public static string getNameFromId(int id)
+        {
+            string namaSampah;
+
+            switch (id)
+            {
+                case 101:
+                    namaSampah = "plastik";
+                    break;
+                case 102:
+                    namaSampah = "logam";
+                    break;
+                case 103:
+                    namaSampah = "kertas";
+                    break;
+                case 104:
+                    namaSampah = "kaca";
+                    break;
+                case 105:
+                    namaSampah = "kain";
+                    break;
+                case 106:
+                    namaSampah = "karet";
+                    break;
+                default:
+                    namaSampah = "Unknown";
+                    break;
+            }
+            return namaSampah;
+            
 
         }
+
+
+    }
 }

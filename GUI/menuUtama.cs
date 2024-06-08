@@ -19,6 +19,8 @@ namespace moneyNtrash.GUI
         private sampahSelector? formSelector;
         private setorSampah? formSetor;
         private transaksiLain? formLain;
+        private pilihHari? formHarian;
+        private pilihBulan? formBulan;
 
         private bool _loginState = false;
         public bool LoginState
@@ -65,6 +67,16 @@ namespace moneyNtrash.GUI
             formLain = null;
             RefreshData();
         }
+        private void hari_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            formHarian = null;
+            RefreshData();
+        }
+        private void bulan_FormClosed(object? sender, FormClosedEventArgs e)
+        {
+            formBulan = null;
+            RefreshData();
+        }
         private void menuUtama_Load(object sender, EventArgs e)
         {
             // Load event logic here if needed
@@ -74,7 +86,7 @@ namespace moneyNtrash.GUI
         {
             LoginState = true;
             setorSampahToolStripMenuItem.Enabled = true;
-            transaksiLainnyaToolStripMenuItem.Enabled =true;    
+            transaksiLainnyaToolStripMenuItem.Enabled = true;
             updateDataToolStripMenuItem.Enabled = true;
             laporanToolStripMenuItem.Enabled = true;
         }
@@ -140,7 +152,7 @@ namespace moneyNtrash.GUI
 
         private void transaksiLainnyaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(formLain == null)
+            if (formLain == null)
             {
                 formLain = new transaksiLain();
                 formLain.FormClosed += lain_FormClosed;
@@ -149,6 +161,34 @@ namespace moneyNtrash.GUI
             else
             {
                 formLain.Activate();
+            }
+        }
+
+        private void harianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formHarian == null)
+            {
+                formHarian = new pilihHari();
+                formHarian.FormClosed += hari_FormClosed;
+                formHarian.Show();
+            }
+            else
+            {
+                formHarian.Activate();
+            }
+        }
+
+        private void bulananToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formBulan == null)
+            {
+                formBulan = new pilihBulan();
+                formBulan.FormClosed += bulan_FormClosed;
+                formBulan.Show();
+            }
+            else
+            {
+                formBulan.Activate();
             }
         }
     }

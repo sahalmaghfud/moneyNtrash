@@ -28,12 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "pilihHari";
+            daySelector = new DateTimePicker();
+            button1 = new Button();
+            SuspendLayout();
+            // 
+            // daySelector
+            // 
+            daySelector.Location = new Point(90, 102);
+            daySelector.Name = "daySelector";
+            daySelector.Size = new Size(278, 27);
+            daySelector.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(179, 163);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 1;
+            button1.Text = "Konfirmasi";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // pilihHari
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(470, 238);
+            Controls.Add(button1);
+            Controls.Add(daySelector);
+            Name = "pilihHari";
+            Text = "pilihHari";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private DateTimePicker daySelector;
+        private Button button1;
     }
 }

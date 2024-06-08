@@ -15,6 +15,16 @@ namespace moneyNtrash.GUI
         public pilihHari()
         {
             InitializeComponent();
+            daySelector.Format = DateTimePickerFormat.Custom;
+            daySelector.CustomFormat = "dd/MM/yyyy";
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            laporanHarian formLaporan = new laporanHarian(daySelector.Text);
+            formLaporan.Show();           
+            
         }
     }
 }
