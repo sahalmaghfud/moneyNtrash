@@ -24,6 +24,7 @@ namespace moneyNtrash.GUI
         {
             LaporanBulanan formLaporan = new LaporanBulanan(monthSelector.Text);
             formLaporan.Show();
+            this.Close();
         }
     }
 }

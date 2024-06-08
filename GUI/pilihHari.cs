@@ -23,7 +23,8 @@ namespace moneyNtrash.GUI
         private void button1_Click(object sender, EventArgs e)
         {
             laporanHarian formLaporan = new laporanHarian(daySelector.Text);
-            formLaporan.Show();           
+            formLaporan.Show();
+            this.Close();
             
         }
     }
