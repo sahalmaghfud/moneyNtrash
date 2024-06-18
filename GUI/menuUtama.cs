@@ -70,12 +70,12 @@ namespace moneyNtrash.GUI
         private void hari_FormClosed(object? sender, FormClosedEventArgs e)
         {
             formHarian = null;
-            RefreshData();
+
         }
         private void bulan_FormClosed(object? sender, FormClosedEventArgs e)
         {
             formBulan = null;
-            RefreshData();
+
         }
         private void menuUtama_Load(object sender, EventArgs e)
         {
@@ -190,6 +190,11 @@ namespace moneyNtrash.GUI
             {
                 formBulan.Activate();
             }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            RefreshData();
         }
     }
 }

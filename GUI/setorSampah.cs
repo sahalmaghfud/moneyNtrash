@@ -15,7 +15,7 @@ namespace moneyNtrash.GUI
 {
     public partial class setorSampah : Form
     {
-        
+        double hargaaa;
         public setorSampah()
         {
             InitializeComponent();
@@ -35,6 +35,7 @@ namespace moneyNtrash.GUI
         {        
           
             double hrg = Sampah.getHarga(cekid());
+            this.hargaaa = hrg;
             double jmh = hrg * (double)berat.Value;
             tombolSImpan.Enabled = true;
             harga.Text = "Rp" + hrg.ToString();
@@ -79,7 +80,11 @@ namespace moneyNtrash.GUI
                 TransaksiSampah transaksi = new TransaksiSampah(nama.Text, cekid(), (double)berat.Value,jumlah);
                 if(transaksi.createTransaksi() == 1)
                 {
+                    double brtlama = Sampah.getJumlahSampah(cekid());
+                    Sampah.updateSampah(cekid(), hargaaa, (double)berat.Value + brtlama);
                     MessageBox.Show("behasil");
+
+
                     this.Close();
                 }
                 else

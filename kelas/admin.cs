@@ -57,7 +57,7 @@ namespace moneyNtrash.kelas
             MySqlCommand cmd = new MySqlCommand("UPDATE admin SET saldo = saldo - @jumlah WHERE username = 'admin';");
                 if (tanda == "+")
                 {
-                     cmd = new MySqlCommand("UPDATE admin SET saldo = saldo - @jumlah WHERE username = 'admin';");
+                     cmd = new MySqlCommand("UPDATE admin SET saldo = saldo + @jumlah WHERE username = 'admin';");
                 }           
             cmd.Parameters.AddWithValue("@tanda", tanda);
             cmd.Parameters.AddWithValue("@jumlah", jumlah);

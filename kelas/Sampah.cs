@@ -95,7 +95,7 @@ namespace moneyNtrash.kelas
         {
             int rst = 0;
            
-            MySqlConnection connect = new MySqlConnection(conString);//membuat objek untuk koneksi ke mysql
+            MySqlConnection connect = new MySqlConnection(conString);
             MySqlCommand cmd = new MySqlCommand("UPDATE datasampah SET harga = @harga , jumlahTersimpan=@stok WHERE id = @idSampah");
             cmd.Parameters.AddWithValue("@harga", harga);
             cmd.Parameters.AddWithValue("@stok", stok);
@@ -105,7 +105,7 @@ namespace moneyNtrash.kelas
             try
             {
               connect.Open();
-              cmd.ExecuteNonQuery();
+             rst= cmd.ExecuteNonQuery();
             }
             catch (Exception ex)
             { 

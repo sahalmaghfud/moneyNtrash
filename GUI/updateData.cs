@@ -24,6 +24,7 @@ namespace moneyNtrash.GUI
            
             harga.Value = (decimal)Sampah.getHarga(idSampah);
             stok.Value = (decimal)Sampah.getJumlahSampah(idSampah);
+            namaSampah.Text = Sampah.getNameFromId(idSampah);
         }
 
         private void button1_Click(object sender, EventArgs e)

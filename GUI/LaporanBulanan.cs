@@ -30,47 +30,44 @@ namespace moneyNtrash.GUI
             decimal totalSampahh = decimal.Parse(totalSampah.Text);
             decimal totalLainn = decimal.Parse(totalLain.Text);
 
-            // Hitung laba
+            
             decimal labaa =  totalLainn - totalSampahh;
 
-            // Masukkan nilai laba ke dalam kontrol teks laba
+            
             laba.Text = labaa.ToString();
 
         }
         private void displayLaporanBulananSampah(string bln, string thn)
         {
-            // Retrieve data for the specified month and year
-            DataTable data = TransaksiSampah.getLaporanBulanan(bln, thn); // Update this method to match your actual data retrieval logic
+           
+            DataTable data = TransaksiSampah.getLaporanBulanan(bln, thn); 
 
-            // Clear existing data in the DataGridView
+            
             dataGridView1.Rows.Clear();
             decimal totalSum = 0;
-            // Iterate through each row in the DataTable
+            
             foreach (DataRow row in data.Rows)
             {
                 DataGridViewRow newRow = new DataGridViewRow();
                 newRow.CreateCells(dataGridView2);
 
-                // Assuming 'tanggal' and 'total' are columns in your DataTable
+                
                 newRow.Cells[dataGridView2.Columns["tanggalS"].Index].Value = row["tanggal"].ToString();
                 decimal temp = Convert.ToDecimal(row["total"]);
                 totalSum += temp;
                 newRow.Cells[dataGridView2.Columns["totalS"].Index].Value = row["total"].ToString();
 
-                // Add the new row to the DataGridView
+               
                 dataGridView2.Rows.Add(newRow);
             }
             totalSampah.Text = totalSum.ToString();
-            // Optionally, display the total sum somewhere in your form
-            // For example:
-            // lblTotalSum.Text = totalSum.ToString("C");
+           
         }
         private void displayLaporanBulananLain(string bln, string thn)
         {
-            // Retrieve data for the specified month and year
-            DataTable data =  trnsksiLain.getLaporanBulanan(bln, thn); // Update this method to match your actual data retrieval logic
-
-            // Clear existing data in the DataGridView
+            
+            DataTable data =  trnsksiLain.getLaporanBulanan(bln, thn); 
+            
             dataGridView1.Rows.Clear();
 
             decimal totalSum = 0;

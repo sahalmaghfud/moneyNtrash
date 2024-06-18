@@ -127,14 +127,14 @@
             // harianToolStripMenuItem
             // 
             harianToolStripMenuItem.Name = "harianToolStripMenuItem";
-            harianToolStripMenuItem.Size = new Size(224, 26);
+            harianToolStripMenuItem.Size = new Size(145, 26);
             harianToolStripMenuItem.Text = "Harian ";
             harianToolStripMenuItem.Click += harianToolStripMenuItem_Click;
             // 
             // bulananToolStripMenuItem
             // 
             bulananToolStripMenuItem.Name = "bulananToolStripMenuItem";
-            bulananToolStripMenuItem.Size = new Size(224, 26);
+            bulananToolStripMenuItem.Size = new Size(145, 26);
             bulananToolStripMenuItem.Text = "Bulanan";
             bulananToolStripMenuItem.Click += bulananToolStripMenuItem_Click;
             // 
@@ -396,6 +396,7 @@
             pictureBox8.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox8.TabIndex = 43;
             pictureBox8.TabStop = false;
+            pictureBox8.Click += pictureBox8_Click;
             // 
             // karetBerat
             // 
